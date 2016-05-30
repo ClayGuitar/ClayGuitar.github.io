@@ -1,0 +1,44 @@
+<%if(page.type !== 'API'){%>
+
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){%>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+        <div class="left">
+            &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and Theme by <a href="https://github.com/jaywcjlove/hexoThemeKacper">hexoThemeKacper </a>
+        </div>
+        <div class="right">
+            <% for(a in config.social){%>
+                <a href="<%=config.social[a]%>"><%=a%></a>
+            <%}%>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+<% if (theme.fancybox){ %>
+  <%- css('fancybox/jquery.fancybox') %>
+  <%- js('fancybox/jquery.fancybox.pack') %>
+<% }else{%>
+<script type="text/javascript">
+$(function(){
+  var $img = $('.article-entry img'),
+      $link = $img.css({
+        "display":"inline-block"
+      }).parent()
+
+  if($link.parent().is("a")){
+      $img.each(function(idx,item) {
+      $(this).parent().attr('href',$(this).parent().parent().attr('href'))
+    })
+  }
+})
+</script>
+<%} %>
+
+<%- js('js/script') %>
+<%}%>
