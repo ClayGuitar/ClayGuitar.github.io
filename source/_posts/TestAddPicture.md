@@ -1,7 +1,7 @@
 ---
 title: TestAddPicture
 date: 2016-05-18 17:33:11
-tags:
+tags: 技术杂谈
 ---
 
 <p>Hello,This is my first article In Github'Blog，Welcome to my Blog</p>
