@@ -77,3 +77,6 @@ deploy:
   type: git    
   repo: https://github.com/ClayGuitar/ClayGuitar.github.io.git
   branch: master
+
+
+
